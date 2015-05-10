@@ -35,13 +35,23 @@ public class TennisGame1 implements TennisGame {
             return formatAdvantage(difference);
         }
 
-        int tempScore=0;
+        int score1 = m_score1;
+        int score2 = m_score2;
+        return format(score1, score2);
+    }
+
+    private String format(int score1, int score2) {
         String text = "";
+        int tempScore=0;
         for (int i=1; i<3; i++)
         {
             if (i==1) {
-                tempScore = m_score1;
-            } else { text+="-"; tempScore = m_score2;}
+                tempScore = score1;
+            } else {
+                text+="-";
+                tempScore = score2;
+            }
+
             switch(tempScore)
             {
             case 0:
