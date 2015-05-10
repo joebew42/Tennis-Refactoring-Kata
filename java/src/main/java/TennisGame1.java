@@ -26,64 +26,64 @@ public class TennisGame1 implements TennisGame {
     public String getScore() {
         if (isDeuce())
         {
-            String score = "";
+            String text = "";
             switch (m_score1)
             {
             case 0:
-                score = "Love-All";
+                text = "Love-All";
                 break;
             case 1:
-                score = "Fifteen-All";
+                text = "Fifteen-All";
                 break;
             case 2:
-                score = "Thirty-All";
+                text = "Thirty-All";
                 break;
             default:
-                score = "Deuce";
+                text = "Deuce";
                 break;
             }
-            return score;
+            return text;
         }
         else if (isAdvantage())
         {
-            String score = "";
+            String text = "";
             int minusResult = m_score1-m_score2;
             if (minusResult==1) {
-                score ="Advantage player1";
+                text ="Advantage player1";
             } else if (minusResult ==-1) {
-                score ="Advantage player2";
+                text ="Advantage player2";
             } else if (minusResult>=2) {
-                score = "Win for player1";
+                text = "Win for player1";
             } else {
-                score ="Win for player2";
+                text ="Win for player2";
             }
-            return score;
+            return text;
         }
 
         int tempScore=0;
-        String score = "";
+        String text = "";
         for (int i=1; i<3; i++)
         {
             if (i==1) {
                 tempScore = m_score1;
-            } else { score+="-"; tempScore = m_score2;}
+            } else { text+="-"; tempScore = m_score2;}
             switch(tempScore)
             {
             case 0:
-                score+="Love";
+                text+="Love";
                 break;
             case 1:
-                score+="Fifteen";
+                text+="Fifteen";
                 break;
             case 2:
-                score+="Thirty";
+                text+="Thirty";
                 break;
             case 3:
-                score+="Forty";
+                text+="Forty";
                 break;
             }
         }
-        return score;
+        return text;
     }
 
     private boolean isAdvantage() {
