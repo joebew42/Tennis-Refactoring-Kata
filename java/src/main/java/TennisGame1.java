@@ -31,18 +31,8 @@ public class TennisGame1 implements TennisGame {
         }
         else if (isAdvantage())
         {
-            String text = "";
             int minusResult = m_score1-m_score2;
-            if (minusResult==1) {
-                text ="Advantage player1";
-            } else if (minusResult ==-1) {
-                text ="Advantage player2";
-            } else if (minusResult>=2) {
-                text = "Win for player1";
-            } else {
-                text ="Win for player2";
-            }
-            return text;
+            return formatAdvantage(minusResult);
         }
 
         int tempScore=0;
@@ -67,6 +57,20 @@ public class TennisGame1 implements TennisGame {
                 text+="Forty";
                 break;
             }
+        }
+        return text;
+    }
+
+    private String formatAdvantage(int minusResult) {
+        String text = "";
+        if (minusResult==1) {
+            text ="Advantage player1";
+        } else if (minusResult ==-1) {
+            text ="Advantage player2";
+        } else if (minusResult>=2) {
+            text = "Win for player1";
+        } else {
+            text ="Win for player2";
         }
         return text;
     }
