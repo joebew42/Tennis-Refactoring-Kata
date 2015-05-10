@@ -26,23 +26,8 @@ public class TennisGame1 implements TennisGame {
     public String getScore() {
         if (isDeuce())
         {
-            String text = "";
-            switch (m_score1)
-            {
-            case 0:
-                text = "Love-All";
-                break;
-            case 1:
-                text = "Fifteen-All";
-                break;
-            case 2:
-                text = "Thirty-All";
-                break;
-            default:
-                text = "Deuce";
-                break;
-            }
-            return text;
+            int score = m_score1;
+            return formatDuece(score);
         }
         else if (isAdvantage())
         {
@@ -82,6 +67,26 @@ public class TennisGame1 implements TennisGame {
                 text+="Forty";
                 break;
             }
+        }
+        return text;
+    }
+
+    private String formatDuece(int score) {
+        String text = "";
+        switch (score)
+        {
+        case 0:
+            text = "Love-All";
+            break;
+        case 1:
+            text = "Fifteen-All";
+            break;
+        case 2:
+            text = "Thirty-All";
+            break;
+        default:
+            text = "Deuce";
+            break;
         }
         return text;
     }
