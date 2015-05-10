@@ -31,8 +31,8 @@ public class TennisGame1 implements TennisGame {
         }
         else if (isAdvantage())
         {
-            int minusResult = m_score1-m_score2;
-            return formatAdvantage(minusResult);
+            int difference = m_score1 - m_score2;
+            return formatAdvantage(difference);
         }
 
         int tempScore=0;
