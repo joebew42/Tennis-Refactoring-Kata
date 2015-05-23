@@ -49,22 +49,24 @@ public class TennisGame1 implements TennisGame {
                 tempScore = score2;
             }
 
-            switch (tempScore) {
-            case 0:
-                text += "Love";
-                break;
-            case 1:
-                text += "Fifteen";
-                break;
-            case 2:
-                text += "Thirty";
-                break;
-            case 3:
-                text += "Forty";
-                break;
-            }
+            text += formatScore(tempScore);
         }
         return text;
+    }
+
+    private String formatScore(int score) {
+        switch (score) {
+        case 0:
+            return "Love";
+        case 1:
+            return "Fifteen";
+        case 2:
+            return "Thirty";
+        case 3:
+            return "Forty";
+        default:
+            return "";
+        }
     }
 
     private String formatAdvantage(int minusResult) {
