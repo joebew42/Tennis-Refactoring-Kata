@@ -84,22 +84,16 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String formatDuece(int score) {
-        String text = "";
         switch (score) {
         case 0:
-            text = "Love-All";
-            break;
+            return "Love-All";
         case 1:
-            text = "Fifteen-All";
-            break;
+            return "Fifteen-All";
         case 2:
-            text = "Thirty-All";
-            break;
+            return "Thirty-All";
         default:
-            text = "Deuce";
-            break;
+            return "Deuce";
         }
-        return text;
     }
 
     private boolean isAdvantage() {
