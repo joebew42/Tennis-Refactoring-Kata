@@ -70,17 +70,19 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String formatAdvantage(int minusResult) {
-        String text = "";
         if (minusResult == 1) {
-            text = "Advantage player1";
-        } else if (minusResult == -1) {
-            text = "Advantage player2";
-        } else if (minusResult >= 2) {
-            text = "Win for player1";
-        } else {
-            text = "Win for player2";
+            return "Advantage player1";
         }
-        return text;
+
+        if (minusResult == -1) {
+            return "Advantage player2";
+        }
+
+        if (minusResult >= 2) {
+            return "Win for player1";
+        }
+
+        return "Win for player2";
     }
 
     private String formatDuece(int score) {
