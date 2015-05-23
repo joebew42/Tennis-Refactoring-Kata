@@ -1,4 +1,3 @@
-
 public class TennisGame1 implements TennisGame {
 
     private int m_score1 = 0;
@@ -24,14 +23,12 @@ public class TennisGame1 implements TennisGame {
     }
 
     public String getScore() {
-        if (isDeuce())
-        {
+        if (isDeuce()) {
             int score = m_score1;
             return formatDuece(score);
         }
 
-        if (isAdvantage())
-        {
+        if (isAdvantage()) {
             int difference = m_score1 - m_score2;
             return formatAdvantage(difference);
         }
@@ -43,29 +40,27 @@ public class TennisGame1 implements TennisGame {
 
     private String format(int score1, int score2) {
         String text = "";
-        int tempScore=0;
-        for (int i=1; i<3; i++)
-        {
-            if (i==1) {
+        int tempScore = 0;
+        for (int i = 1; i < 3; i++) {
+            if (i == 1) {
                 tempScore = score1;
             } else {
-                text+="-";
+                text += "-";
                 tempScore = score2;
             }
 
-            switch(tempScore)
-            {
+            switch (tempScore) {
             case 0:
-                text+="Love";
+                text += "Love";
                 break;
             case 1:
-                text+="Fifteen";
+                text += "Fifteen";
                 break;
             case 2:
-                text+="Thirty";
+                text += "Thirty";
                 break;
             case 3:
-                text+="Forty";
+                text += "Forty";
                 break;
             }
         }
@@ -74,22 +69,21 @@ public class TennisGame1 implements TennisGame {
 
     private String formatAdvantage(int minusResult) {
         String text = "";
-        if (minusResult==1) {
-            text ="Advantage player1";
-        } else if (minusResult ==-1) {
-            text ="Advantage player2";
-        } else if (minusResult>=2) {
+        if (minusResult == 1) {
+            text = "Advantage player1";
+        } else if (minusResult == -1) {
+            text = "Advantage player2";
+        } else if (minusResult >= 2) {
             text = "Win for player1";
         } else {
-            text ="Win for player2";
+            text = "Win for player2";
         }
         return text;
     }
 
     private String formatDuece(int score) {
         String text = "";
-        switch (score)
-        {
+        switch (score) {
         case 0:
             text = "Love-All";
             break;
@@ -107,10 +101,10 @@ public class TennisGame1 implements TennisGame {
     }
 
     private boolean isAdvantage() {
-        return m_score1>=4 || m_score2>=4;
+        return m_score1 >= 4 || m_score2 >= 4;
     }
 
     private boolean isDeuce() {
-        return m_score1==m_score2;
+        return m_score1 == m_score2;
     }
 }
