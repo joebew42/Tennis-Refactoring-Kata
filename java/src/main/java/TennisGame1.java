@@ -29,7 +29,8 @@ public class TennisGame1 implements TennisGame {
             int score = m_score1;
             return formatDuece(score);
         }
-        else if (isAdvantage())
+
+        if (isAdvantage())
         {
             int difference = m_score1 - m_score2;
             return formatAdvantage(difference);
