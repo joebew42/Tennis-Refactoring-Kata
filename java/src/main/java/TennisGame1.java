@@ -24,18 +24,14 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         if (isDeuce()) {
-            int score = m_score1;
-            return formatDuece(score);
+            return formatDuece(m_score1, m_score2);
         }
 
         if (isAdvantage()) {
-            int difference = m_score1 - m_score2;
-            return formatAdvantage(difference);
+            return formatAdvantage(m_score1, m_score2);
         }
 
-        int score1 = m_score1;
-        int score2 = m_score2;
-        return format(score1, score2);
+        return format(m_score1, m_score2);
     }
 
     private String format(int score1, int score2) {
@@ -57,24 +53,26 @@ public class TennisGame1 implements TennisGame {
         }
     }
 
-    private String formatAdvantage(int minusResult) {
-        if (minusResult == 1) {
+    private String formatAdvantage(int score1, int score2) {
+        int difference = score1 - score2;
+
+        if (difference == 1) {
             return "Advantage player1";
         }
 
-        if (minusResult == -1) {
+        if (difference == -1) {
             return "Advantage player2";
         }
 
-        if (minusResult >= 2) {
+        if (difference >= 2) {
             return "Win for player1";
         }
 
         return "Win for player2";
     }
 
-    private String formatDuece(int score) {
-        switch (score) {
+    private String formatDuece(int score1, int score2) {
+        switch (score1) {
         case 0:
             return "Love-All";
         case 1:
