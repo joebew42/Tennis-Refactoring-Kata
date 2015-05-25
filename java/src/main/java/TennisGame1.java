@@ -1,7 +1,7 @@
 
 public class TennisGame1 implements TennisGame {
 
-    ScoreBoard scoreBoard;
+    private ScoreBoard scoreBoard;
     private FormatterFactory formatterFactory;
 
     public TennisGame1(String player1Name, String player2Name) {
