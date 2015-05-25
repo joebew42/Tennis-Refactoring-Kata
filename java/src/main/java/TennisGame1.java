@@ -12,6 +12,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     public TennisGame1(String player1Name, String player2Name, FormatterFactory formatterFactory) {
+        ScoreBoard scoreBoard = new ScoreBoard(player1Name, player2Name);
         this.player1Name = player1Name;
         this.player2Name = player2Name;
         this.formatterFactory = formatterFactory;
