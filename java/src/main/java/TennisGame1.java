@@ -1,8 +1,6 @@
 
 public class TennisGame1 implements TennisGame {
 
-    private String player1Name;
-    private String player2Name;
     private ScoreBoard scoreBoard;
     private FormatterFactory formatterFactory;
 
@@ -12,8 +10,6 @@ public class TennisGame1 implements TennisGame {
 
     public TennisGame1(ScoreBoard scoreBoard, FormatterFactory formatterFactory) {
         this.scoreBoard = scoreBoard;
-        this.player1Name = player1Name;
-        this.player2Name = player2Name;
         this.formatterFactory = formatterFactory;
     }
 
