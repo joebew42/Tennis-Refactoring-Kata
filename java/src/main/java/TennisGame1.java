@@ -1,7 +1,7 @@
 
 public class TennisGame1 implements TennisGame {
 
-    private ScoreBoard scoreBoard;
+    ScoreBoard scoreBoard;
     private FormatterFactory formatterFactory;
 
     public TennisGame1(String player1Name, String player2Name) {
@@ -14,15 +14,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        incrementScoreFor(playerName);
-    }
-
-    private void incrementScoreFor(String playerName) {
-        if (playerName == "player1") {
-            scoreBoard.incrementScore1();
-        } else {
-            scoreBoard.incrementScore2();
-        }
+        scoreBoard.incrementScoreFor(playerName);
     }
 
     public String getScore() {

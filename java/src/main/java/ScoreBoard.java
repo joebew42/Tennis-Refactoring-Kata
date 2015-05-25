@@ -11,11 +11,19 @@ public class ScoreBoard {
         this.player2Name = player2Name;
     }
 
-    public void incrementScore2() {
+    public void incrementScoreFor(String playerName) {
+        if (playerName == "player1") {
+            incrementScore1();
+        } else {
+            incrementScore2();
+        }
+    }
+
+    private void incrementScore2() {
         score2 += 1;
     }
 
-    public void incrementScore1() {
+    private void incrementScore1() {
         score1 += 1;
     }
 
@@ -26,5 +34,6 @@ public class ScoreBoard {
     public int getScore2() {
         return score2;
     }
+
 
 }
