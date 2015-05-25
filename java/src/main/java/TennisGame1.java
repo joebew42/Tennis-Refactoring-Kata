@@ -6,13 +6,14 @@ public class TennisGame1 implements TennisGame {
     private String player1Name;
     private String player2Name;
     private FormatterFactory formatterFactory;
+    private ScoreBoard scoreBoard;
 
     public TennisGame1(String player1Name, String player2Name) {
-        this(player1Name, player2Name, new FormatterFactory());
+        this(new ScoreBoard(player1Name, player2Name), new FormatterFactory());
     }
 
-    public TennisGame1(String player1Name, String player2Name, FormatterFactory formatterFactory) {
-        ScoreBoard scoreBoard = new ScoreBoard(player1Name, player2Name);
+    public TennisGame1(ScoreBoard scoreBoard, FormatterFactory formatterFactory) {
+        this.scoreBoard = scoreBoard;
         this.player1Name = player1Name;
         this.player2Name = player2Name;
         this.formatterFactory = formatterFactory;
