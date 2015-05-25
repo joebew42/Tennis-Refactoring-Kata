@@ -11,7 +11,7 @@ public class ScoreBoard {
         this.player2Name = player2Name;
     }
 
-    public void incrementScoreFor(String playerName) {
+    public void pointTo(String playerName) {
         if (playerName == "player1") {
             incrementScore1();
         } else {

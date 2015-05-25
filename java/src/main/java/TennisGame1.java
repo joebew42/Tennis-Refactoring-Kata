@@ -14,7 +14,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        scoreBoard.incrementScoreFor(playerName);
+        scoreBoard.pointTo(playerName);
     }
 
     public String getScore() {
