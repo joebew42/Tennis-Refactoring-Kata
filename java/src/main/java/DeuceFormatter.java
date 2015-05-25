@@ -6,7 +6,7 @@ public class DeuceFormatter implements Formatter {
         this.score = score;
     }
 
-    public String format() {
+    public String output() {
         switch (score) {
         case 0:
             return "Love-All";

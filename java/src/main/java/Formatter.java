@@ -1,5 +1,5 @@
 public interface Formatter {
 
-    public abstract String format();
+    public abstract String output();
 
 }

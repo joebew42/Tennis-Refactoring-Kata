@@ -8,7 +8,7 @@ public class DefaultFormatter implements Formatter {
         this.score2 = score2;
     }
 
-    public String format() {
+    public String output() {
         return formatScore(score1) + "-" + formatScore(score2);
     }
 

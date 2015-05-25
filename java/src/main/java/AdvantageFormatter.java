@@ -8,7 +8,7 @@ public class AdvantageFormatter implements Formatter {
         this.score2 = score2;
     }
 
-    public String format() {
+    public String output() {
         int difference = score1 - score2;
 
         if (difference == 1) {
