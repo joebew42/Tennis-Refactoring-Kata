@@ -27,21 +27,10 @@ public class TennisGame1 implements TennisGame {
         int score1 = m_score1;
         int score2 = m_score2;
 
-        Formatter formatter = buildFormatterFor(score1, score2);
+        FormatterFactory formatterFactory = new FormatterFactory();
+        Formatter formatter = formatterFactory.buildFor(score1, score2);
 
         return formatter.format(score1, score2);
-    }
-
-    private Formatter buildFormatterFor(int score1, int score2) {
-        if (score1 == score2) {
-            return new DeuceFormatter();
-        }
-
-        if (score1 > 3 || score2 > 3) {
-            return new AdvantageFormatter();
-        }
-
-        return new DefaultFormatter();
     }
 
 }
