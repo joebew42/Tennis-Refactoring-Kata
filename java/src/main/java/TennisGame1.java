@@ -27,7 +27,8 @@ public class TennisGame1 implements TennisGame {
         int score2 = m_score2;
 
         if (score1 == score2) {
-            return dueceFormatterFormat(score1, score2);
+            DeuceFormatter formatter = new DeuceFormatter();
+            return formatter.format(score1, score2);
         }
 
         if (score1 > 3 || score2 > 3) {
@@ -74,16 +75,4 @@ public class TennisGame1 implements TennisGame {
         return "Win for player2";
     }
 
-    private String dueceFormatterFormat(int score1, int score2) {
-        switch (score1) {
-        case 0:
-            return "Love-All";
-        case 1:
-            return "Fifteen-All";
-        case 2:
-            return "Thirty-All";
-        default:
-            return "Deuce";
-        }
-    }
 }
