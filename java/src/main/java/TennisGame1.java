@@ -1,3 +1,4 @@
+
 public class TennisGame1 implements TennisGame {
 
     private int m_score1 = 0;
@@ -36,26 +37,8 @@ public class TennisGame1 implements TennisGame {
             return formatter.format(score1, score2);
         }
 
-        return defaultFormatterFormat(score1, score2);
-    }
-
-    private String defaultFormatterFormat(int score1, int score2) {
-        return formatScore(score1) + "-" + formatScore(score2);
-    }
-
-    private String formatScore(int score) {
-        switch (score) {
-        case 0:
-            return "Love";
-        case 1:
-            return "Fifteen";
-        case 2:
-            return "Thirty";
-        case 3:
-            return "Forty";
-        default:
-            return "";
-        }
+        DefaultFormatter formatter = new DefaultFormatter();
+        return formatter.format(score1, score2);
     }
 
 }
