@@ -1,5 +1,4 @@
-
-public class DefaultFormatter {
+public class DefaultFormatter implements Formatter {
 
     public String format(int score1, int score2) {
         return formatScore(score1) + "-" + formatScore(score2);

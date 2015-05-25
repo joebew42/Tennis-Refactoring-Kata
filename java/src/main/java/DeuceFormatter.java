@@ -1,5 +1,4 @@
-
-public class DeuceFormatter {
+public class DeuceFormatter implements Formatter {
 
     public String format(int score1, int score2) {
         switch (score1) {

@@ -1,5 +1,4 @@
-
-public class AdvantageFormatter {
+public class AdvantageFormatter implements Formatter {
 
     public String format(int score1, int score2) {
         int difference = score1 - score2;

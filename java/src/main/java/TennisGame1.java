@@ -28,16 +28,16 @@ public class TennisGame1 implements TennisGame {
         int score2 = m_score2;
 
         if (score1 == score2) {
-            DeuceFormatter formatter = new DeuceFormatter();
+            Formatter formatter = new DeuceFormatter();
             return formatter.format(score1, score2);
         }
 
         if (score1 > 3 || score2 > 3) {
-            AdvantageFormatter formatter = new AdvantageFormatter();
+            Formatter formatter = new AdvantageFormatter();
             return formatter.format(score1, score2);
         }
 
-        DefaultFormatter formatter = new DefaultFormatter();
+        Formatter formatter = new DefaultFormatter();
         return formatter.format(score1, score2);
     }
 
