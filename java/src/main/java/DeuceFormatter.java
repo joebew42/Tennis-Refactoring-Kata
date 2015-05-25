@@ -1,7 +1,13 @@
 public class DeuceFormatter implements Formatter {
 
-    public String format(int score1, int score2) {
-        switch (score1) {
+    private int score;
+
+    public DeuceFormatter(int score) {
+        this.score = score;
+    }
+
+    public String format() {
+        switch (score) {
         case 0:
             return "Love-All";
         case 1:

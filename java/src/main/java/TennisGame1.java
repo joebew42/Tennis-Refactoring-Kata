@@ -35,7 +35,7 @@ public class TennisGame1 implements TennisGame {
 
         Formatter formatter = formatterFactory.buildFor(score1, score2);
 
-        return formatter.format(score1, score2);
+        return formatter.format();
     }
 
 }

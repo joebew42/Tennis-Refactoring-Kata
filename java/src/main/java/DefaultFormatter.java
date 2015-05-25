@@ -1,6 +1,14 @@
 public class DefaultFormatter implements Formatter {
 
-    public String format(int score1, int score2) {
+    private int score1;
+    private int score2;
+
+    public DefaultFormatter(int score1, int score2) {
+        this.score1 = score1;
+        this.score2 = score2;
+    }
+
+    public String format() {
         return formatScore(score1) + "-" + formatScore(score2);
     }
 
